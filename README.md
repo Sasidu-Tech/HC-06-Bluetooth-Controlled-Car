@@ -1,1 +1,140 @@
-# HC-06-Bluetooth-Controlled-Car
+```cpp
+# HC-06 Bluetooth Controlled Car
+
+## 📌 Overview
+A Bluetooth-controlled robot car built using Arduino UNO, HC-06 Bluetooth module, L293D motor driver, and DC motors.
+
+## 🔧 Components
+- Arduino UNO
+- HC-06 Bluetooth Module
+- L293D Motor Driver
+- 2 DC Motors
+- Robot Chassis
+- Battery Pack
+
+## 📱 Controls
+- F - Forward
+- B - Backward
+- L - Left
+- R - Right
+- S - Stop
+
+## 📂 Project Files
+- Arduino source code
+- Circuit diagram
+- Project images
+- Testing Video
+
+## 🚀 Author
+**Sasindu Wishshanka**
+```
+
+#Project Image
+
+<img width="3968" height="2976" alt="IMG_20260626_135547_949" src="https://github.com/user-attachments/assets/ea9f0967-819f-4f21-9d84-61821ffe441f" />
+<img width="3968" height="2976" alt="IMG_20260626_135541_791" src="https://github.com/user-attachments/assets/b91d24e8-b3b3-40ac-b035-9c5e574ba04a" />
+<img width="3968" height="2976" alt="IMG_20260626_135524_678" src="https://github.com/user-attachments/assets/c250876c-bf57-40bf-ab4f-d7ba44a353f4" />
+<img width="3968" height="2976" alt="IMG_20260626_135611_820" src="https://github.com/user-attachments/assets/c6b97c87-c6a4-44cf-9bc9-5aa46e6bca3e" />
+<img width="3968" height="2976" alt="IMG_20260626_135600_248" src="https://github.com/user-attachments/assets/c5d4ad0c-3fb0-4b02-b693-f96a2ab1542c" />
+#Testing Video
+
+
+
+https://github.com/user-attachments/assets/78fcf06d-9230-404a-89c8-05774c08a512
+
+
+
+#Arduino Code 
+```cpp
+//Sasidu Wishshanka(*Sasidu-Tech)
+
+#include <AFMotor.h>
+#include <SoftwareSerial.h>
+
+SoftwareSerial BT(A0, A1); // RX, TX
+
+
+AF_DCMotor r1 (1);
+AF_DCMotor r2 (2);
+AF_DCMotor r3 (3);
+AF_DCMotor r4 (4);
+
+
+void setup() {
+  // put your setup code here, to run once:
+ 
+  Serial.begin(9600);
+  BT.begin(9600);
+
+  r1.setSpeed(200);
+  r2.setSpeed(200);
+  r3.setSpeed(200);
+  r4.setSpeed(200);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+if (BT.available()) {
+    char command = BT.read();
+    Serial.print(command);
+
+  if(command == 'f') forward();
+  else if(command == 'b') backward();
+  else if(command == 'l') left();
+  else if(command == 'r') right();
+  else if(command == 's') stop();
+
+  }
+}
+
+
+
+  void forward() {
+
+    r1.run(FORWARD);
+    r2.run(BACKWARD);
+    r3.run(BACKWARD);
+    r4.run(FORWARD);
+  }
+
+  void backward() {
+
+    r1.run(BACKWARD);
+    r2.run(FORWARD);
+    r3.run(FORWARD);
+    r4.run(BACKWARD);
+  }
+
+  void left() {
+  r1.run(BACKWARD);
+  r2.run(FORWARD);
+
+  r3.run(BACKWARD);
+  r4.run(FORWARD);
+}
+
+ void right() {
+  r1.run(FORWARD);
+  r2.run(BACKWARD);
+
+  r3.run(FORWARD);
+  r4.run(BACKWARD);
+}
+ 
+ void stop() {
+  r1.run(RELEASE);
+  r2.run(RELEASE);
+  r3.run(RELEASE);
+  r4.run(RELEASE);
+}
+```
+
+  
+
+
+
+
+
+
