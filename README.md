@@ -36,6 +36,10 @@ A Bluetooth-controlled robot car built using Arduino UNO, HC-06 Bluetooth module
 <img width="3968" height="2976" alt="IMG_20260626_135524_678" src="https://github.com/user-attachments/assets/c250876c-bf57-40bf-ab4f-d7ba44a353f4" />
 <img width="3968" height="2976" alt="IMG_20260626_135611_820" src="https://github.com/user-attachments/assets/c6b97c87-c6a4-44cf-9bc9-5aa46e6bca3e" />
 <img width="3968" height="2976" alt="IMG_20260626_135600_248" src="https://github.com/user-attachments/assets/c5d4ad0c-3fb0-4b02-b693-f96a2ab1542c" />
+
+#Wiring Diagram
+<img width="1080" height="872" alt="Screenshot_20260626-150410 (1)" src="https://github.com/user-attachments/assets/cdfe2211-07ef-4970-89c9-7a42ef0a96d6" />
+
 #Testing Video
 
 
