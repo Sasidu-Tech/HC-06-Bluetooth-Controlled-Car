@@ -26,6 +26,6 @@ A Bluetooth-controlled robot car built using Arduino UNO, HC-06 Bluetooth module
 - Testing Video
 
 ## 🚀 Author
-**Sasindu Wishshanka**
+**Sasidu Wishshanka**
 ```
 
