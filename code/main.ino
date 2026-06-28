@@ -46,16 +46,16 @@ if (BT.available()) {
   void forward() {
 
     r1.run(FORWARD);
-    r2.run(BACKWARD);
-    r3.run(BACKWARD);
+    r2.run(FORWARD);
+    r3.run(FORWARD);
     r4.run(FORWARD);
   }
 
   void backward() {
 
     r1.run(BACKWARD);
-    r2.run(FORWARD);
-    r3.run(FORWARD);
+    r2.run(BACKWARD);
+    r3.run(BACKWARD);
     r4.run(BACKWARD);
   }
 
